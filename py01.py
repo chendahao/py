@@ -58,3 +58,37 @@
 # import  os
 # print([d for d in os.listdir(',')])
 #---————————————————————
+
+# std1={'name':'m','score':90}
+# std2={'name':'n','score':91}
+# def printscore(std):
+# 	print('%s:%s' % (std['name'],std['score']))
+
+# printscore(std1)
+# printscore(std2)
+
+class Student(object):
+	"""docstring for Student"""
+	def __init__(self, name , score):
+		super(Student, self).__init__()
+		self.__name = name
+		self.__score = score
+	def printscore(self):
+		print('%s:%s' % (self.__name,self.__score))
+	def getgrade(self):
+		if self.__score>=90:
+			return 'A'
+		elif self.__score>=60:
+			return 'B'
+		else:
+			return 'C'
+	def getname(self):
+		return self.__name
+	def getscore(self):
+		return self.__score		
+bart=Student('Bart',59)
+lisa=Student('lisa',60)
+bart.printscore()
+# print(lisa.getname(),lisa.getgrade())     //虽然双下划线的变量为私有变量（__）但是可以通过_类型__变量（_Student__name）
+print(lisa._Student__name,lisa.getgrade())
+
